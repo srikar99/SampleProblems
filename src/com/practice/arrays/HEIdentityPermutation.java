@@ -13,6 +13,7 @@ public class HEIdentityPermutation {
 		}
 	}
 
+	@SuppressWarnings("unused")
 	private static int calculateMinNumberOfStep(int[] perm) {
 
 		int[] sortedArray = sort(perm);

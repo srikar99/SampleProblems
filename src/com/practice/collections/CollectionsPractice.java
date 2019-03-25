@@ -15,6 +15,7 @@ public class CollectionsPractice {
 	
 	static List<String> list = new ArrayList<>();
 	
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		Queue<String> queue = new LinkedList<>();
 		// this is providing type safety, collection is of type string
