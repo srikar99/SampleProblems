@@ -56,6 +56,7 @@ public class AdobeLRUCache {
 				int removedKey = lruQueue.removeLast();
 				cacheMap.remove(removedKey);
 				cacheMap.put(key, value);
+				lruQueue.addFirst(key);
 			}
 		} else {
 			cacheMap.put(key, value);

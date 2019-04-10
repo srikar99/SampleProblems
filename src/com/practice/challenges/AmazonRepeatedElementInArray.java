@@ -1,8 +1,5 @@
 package com.practice.challenges;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class AmazonRepeatedElementInArray {
 
 	public static void main(String[] args) {
@@ -42,18 +39,15 @@ public class AmazonRepeatedElementInArray {
 	private static int findDuplicate(final int[] a) {
 		int n = a.length;
 		
-		Map<Integer, Integer> duplicateMap = new HashMap<Integer, Integer>();
-		
-		int value = -1;
+		int[] count = new int[n];
 		
 		for (int i = 0; i < n; i++) {
-			if(!duplicateMap.containsValue(a[i])) {
-				duplicateMap.put(i, a[i]);
-			} else {
-				value = a[i];
+			count[a[i]]++;
+			if(count[a[i]] > 1) {
+				return a[i];
 			}
 		}
 		
-		return value;
+		return -1;
 	}
 }
