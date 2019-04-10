@@ -24,8 +24,6 @@ public class GasStationProblem {
 
 	// fastest solution
 	public int canCompleteCircuitFastest(final List<Integer> A, final List<Integer> B) {
-		double max = -1;
-		int maxIdx = -1;
 		int Asum = 0, Bsum = 0;
 		for (int i = 0; i < A.size(); i++) {
 			Asum += A.get(i);
