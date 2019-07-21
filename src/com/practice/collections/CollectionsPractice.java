@@ -1,9 +1,9 @@
 package com.practice.collections;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Queue;
 
 /**
@@ -27,8 +27,8 @@ public class CollectionsPractice {
 		// accidently result in runtime error.
 
 		// adding element of type E
-		list.add("String");
-		list.add("String");
+		//list.add("String");
+		//list.add("String");
 		
 		// removing element at an index
 		//list.remove(1);
@@ -41,12 +41,14 @@ public class CollectionsPractice {
 		
 		// list.clear();
 		
-		Iterator<String> itr = list.iterator();
-		while(itr.hasNext()) {
+		//Iterator<String> itr = list.iterator();
+		/*while(itr.hasNext()) {
 			System.out.println(itr.next());
 			itr.remove();
 			System.out.println(itr.next());
-		}
+		}*/
+		
+		iterateOverList();
 	}
 
 	@SuppressWarnings("unused")
@@ -71,5 +73,27 @@ public class CollectionsPractice {
 			 System.out.println(s);
 		}
 	}
+	
+	private static void iterateOverList() {
+		List<Integer> numList = new ArrayList<>();
+		
+		numList.add(5);
+		numList.add(3);
+		numList.add(1);
+		numList.add(6);
+		numList.add(2);
+		numList.add(9);
+		
+		ListIterator<Integer> itr = numList.listIterator();
+		
+		while(itr.hasNext()) {
+			if(itr.next() > 5) {
+				numList.add(itr.nextIndex(), itr.next() + 1);
+			}
+		}
+		
+		System.out.println(numList);
+	}
+
 
 }

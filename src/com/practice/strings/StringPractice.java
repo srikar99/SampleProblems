@@ -11,52 +11,54 @@ public class StringPractice {
 
 		equalityOperations();
 		countEachCharInString("asdfasdfaaab");
-		System.out.println(checkIfPalindrome("ABBA"));
+		System.out.println("palindrome:" + checkIfPalindrome("ABBA"));
 		checkDuplicates("asdfasdfaaab");
 		removeWhiteSpace("s t r i n g");
 		reverse("test");
-		
+
 		StringBuilder sb = new StringBuilder();
-		
+
 		sb.append("ab").append("cd");
-		
+
 		System.out.println(sb.toString());
 		System.out.println(new String(sb));
-		
+
 		String s1 = "abcd";
 		String s2 = "ghAB";
-		
+
 		boolean b = s1.regionMatches(true, 0, s2, 2, 2);
 		System.out.println(b);
-		
+
 		StringBuffer sBuf = new StringBuffer();
 		sBuf.append("String").append("Buffer");
 		System.out.println(sBuf.toString());
 		System.out.println(new String(sBuf));
-		
+
 		int i = 10;
-		
+
 		String valueOfVar = String.valueOf(i);
-		
+
 		Integer in = new Integer(10);
 
 		String toStrignVar = in.toString();
-		
+
 		System.out.println(valueOfVar + " " + toStrignVar);
-		
+
 		System.out.println(new String(Integer.toString(11)));
+		stringExample();
+		substringExample();
 	}
 
 	private static void equalityOperations() {
 		String s1 = "abc";
 		String s2 = new String("abc").intern();
-		String s3 = "abc";
+		String s3 = new String("abc");
 
 		if (s1 == s2) {
 			System.out.println("true");
 		}
-		if (s1 == s3) {
-			System.out.println("true");
+		if (s1 != s3) {
+			System.out.println("false");
 		}
 	}
 
@@ -79,15 +81,15 @@ public class StringPractice {
 
 	private static boolean checkIfPalindrome(String s) {
 		StringBuilder sb = new StringBuilder(s);
-		if (sb.reverse().toString().equals(s)) {
+		/*if (sb.reverse().toString().equals(s)) {
 			return true;
-		}
-		for (int i = 0; i < s.length() / 2; ++i) {
+		}*/
+		for (int i = 0; i < s.length() / 2; i++) {
 			if (s.charAt(i) != s.charAt(s.length() - i - 1)) {
 				return false;
 			}
 		}
-		return false;
+		return true;
 	}
 
 	private static void checkDuplicates(String s) {
@@ -130,13 +132,31 @@ public class StringPractice {
 		String sBuf = new StringBuffer(s).reverse().toString();
 		String revString = "";
 		char[] arr = s.toCharArray();
-		
+
 		for (int i = arr.length - 1; i >= 0; i--) {
 			revString += arr[i];
 		}
-		
+
 		System.out.println(revString);
 		System.out.println(reverseString);
 		System.out.println(sBuf);
+	}
+	
+	private static void stringExample() {
+		String hello = "Hello";
+		String lo = "lo";
+		
+		System.out.println((hello == "Hel" + lo));
+		System.out.println((hello == "Hel" + "lo"));
+		System.out.println((hello == ("Hel" + lo).intern()));
+	}
+	
+	private static void substringExample() {
+		String longString = "Thisisalongstring";
+		String subString = "This";
+		
+		longString = longString.substring(0, 4);
+		
+		System.out.println("Substring example: " + (subString == longString.intern()));
 	}
 }

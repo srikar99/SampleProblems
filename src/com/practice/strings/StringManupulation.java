@@ -16,7 +16,6 @@ public class StringManupulation {
 		for(int i = s.length() - k; i < s.length(); i++) {
 			shiftedString += s.charAt(i); 
 		}
-		
 		shiftedString += s.substring(0, s.length() - k);
 		
 		System.out.println(shiftedString);

@@ -24,10 +24,12 @@ public class MicrosoftLongestIncreasingSubsequence {
 		}
 		
 		for(int i = 0; i < subArr.length; i++) {
+			System.out.print(subArr[i]);
 			if(max < subArr[i]) {
 				max = subArr[i];
 			}
 		}
+		System.out.println();
 		return max;
 	}
 }

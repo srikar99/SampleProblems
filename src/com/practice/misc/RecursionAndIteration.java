@@ -3,16 +3,17 @@ package com.practice.misc;
 public class RecursionAndIteration {
 
 	static int[] resultArray;
-	
+	static int[] someArr = {1, 2, 3, 4, 5};
 	public static void main(String[] args) {
 		int fact = resursiveFactorial(2);
 		System.out.println(fact);
 		System.out.println(iterativeFactorial(6));
-		recursiveFibonacci(5);
+		//recursiveFibonacci(5);
 		
-		for(int i : resultArray) {
+		/*for(int i : resultArray) {
 			System.out.println(i);
-		}
+		}*/
+		printArray(5);
 	}
 
 	private static int resursiveFactorial(int n) {
@@ -50,4 +51,13 @@ public class RecursionAndIteration {
 		}
 		return result;
 	}
+	
+	private static void printArray(int n) {
+		if(n == 0) {
+			return;
+		} else {
+			printArray(n - 1);
+			System.out.println(someArr[n - 1]);
+		}
+ 	}
 }
