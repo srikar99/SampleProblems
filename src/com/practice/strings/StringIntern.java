@@ -1,5 +1,8 @@
 package com.practice.strings;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class StringIntern {
 
 	public static void main(String[] args) {
@@ -11,9 +14,12 @@ public class StringIntern {
 		System.out.print((com.practice.strings.Other.hello == hello) + " ");
 		System.out.print((hello == ("Hel" + "lo")) + " ");
 		System.out.print((hello == ("Hel" + lo)) + " ");
+		System.out.print((hello == "Hel" + lo.intern()) + " ");
 		System.out.print((hello == s) + " ");
 		System.out.print((hello == s1) + " ");
 		System.out.println(hello == ("Hel" + lo).intern());
+		System.out.println(hello == (s).intern());
+		
 	}
 }
 

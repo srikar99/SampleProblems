@@ -2,13 +2,13 @@ package com.practice.sorting;
 
 public class QuickSort {
 
-	private static int[] array = { 4, 3, 1, 5, 2 };
+	private static int[] array = { 5, 3, 1, 4, 2 };
 
 	public static void main(String[] args) {
 		quickSort(array, 0, array.length - 1);
 
 		for (int i : array) {
-			System.out.println(i + " ");
+			System.out.print(i + " ");
 		}
 	}
 

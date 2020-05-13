@@ -4,14 +4,17 @@ public class BubbleSort {
 	int reverse;
 	public static void main(String[] args) {
 		BubbleSort bs = new BubbleSort();
-		 int arr[] = {64, 86, 15, 122, 22, 11, 90}; 
-		 sort(arr);
-		 printArray(arr);
-		 System.out.println();
-		 swapWithTemp(120, 1320);
-		 bs.reverseInt(3246878);
-		 System.out.println(bs.reverse);
-		 swapWithoutTemp(10, 20);
+		// int arr[] = {64, 86, 15, 122, 22, 11, 90}; 
+		// sort(arr);
+		// printArray(arr);
+		// System.out.println();
+		// swapWithTemp(120, 1320);
+		// bs.reverseInt(1534236469);
+		 bs.reverseIntWithoutRecursion(1534236469);
+		 //System.out.println(bs.reverse);
+		// swapWithoutTemp(10, 20);
+		 
+		 System.out.println(isPalindrome(-121));
 		 
 	}
 	
@@ -28,6 +31,12 @@ public class BubbleSort {
 					array[j] = array[j] + array[j+1];
 					array[j+1] = array[j] - array[j+1];
 					array[j] = array[j] -  array[j+1];
+				}
+				
+				if(array[j] > array[j+1]) {
+					int temp = array[j];
+					array[j] = array[j+1];
+					array[j+1] = temp;
 				}
 			}
 		}
@@ -47,8 +56,39 @@ public class BubbleSort {
 		if(a > 0) {
 			reverseInt(a);
 		}
+		
+		System.out.println(reverse);
+	}
+	
+	private int reverseIntWithoutRecursion(int x) {
+		int a = 0, b = 0;
+        while(x != 0) {
+            int y = x % 10;
+            a = a * 10 + y;
+            if((a-y) / 10 != b) {
+                return 0;
+            }
+            b = a;
+            x = x / 10;
+        }
+        
+        return a;
 	}
 
+	 public static boolean isPalindrome(int x) {
+	        int a = 0, b = x;
+	        while(x != 0) {
+	            a = a*10 + x%10;
+	            x = x/10;
+	        }
+	        
+	        System.out.println(a);
+	        if(a == b) {
+	            return true;
+	        } else {
+	        	return false;
+	        }
+	    }
 	private static void swapWithoutTemp(int a, int b) {
 		a = a + b;
 		b = a - b;

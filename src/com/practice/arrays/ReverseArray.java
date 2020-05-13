@@ -1,9 +1,18 @@
 package com.practice.arrays;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class ReverseArray {
 
 	public static void main(String[] args) {
-		int[] array = {4, 12, 7, 15, 9};
+		int[] array = new int[5];
+		List<int[]> list = null;
+		if(array != null && array.length !=0) {
+			list = Arrays.asList(array);
+			System.out.println(list);
+		}
+		
 		reverseArray(array);
 	}
 

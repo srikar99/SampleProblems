@@ -23,17 +23,17 @@ public class GasStationProblem {
 	}
 
 	// fastest solution
-	public int canCompleteCircuitFastest(final List<Integer> A, final List<Integer> B) {
+	public int canCompleteCircuitFastest(final List<Integer> gas, final List<Integer> cost) {
 		int Asum = 0, Bsum = 0;
-		for (int i = 0; i < A.size(); i++) {
-			Asum += A.get(i);
-			Bsum += B.get(i);
+		for (int i = 0; i < gas.size(); i++) {
+			Asum += gas.get(i);
+			Bsum += cost.get(i);
 		}
 		if (Asum < Bsum)
 			return -1;
-		for (int i = 0; i < A.size(); i++) {
-			if (A.get(i) >= B.get(i)) {
-				if (checkPossibility(A, B, i))
+		for (int i = 0; i < gas.size(); i++) {
+			if (gas.get(i) >= cost.get(i)) {
+				if (checkPossibility(gas, cost, i))
 					return i;
 			}
 		}

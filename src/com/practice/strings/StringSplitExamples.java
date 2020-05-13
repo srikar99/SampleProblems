@@ -8,7 +8,9 @@ import java.util.Set;
 public class StringSplitExamples {
 
 	public static void main(String[] args) {
-		Set<String> keySet = new HashSet<>();
+		stringSplit("LocationIdentifier <> '7412029'");
+		
+		/*Set<String> keySet = new HashSet<>();
 		keySet.add("LocationName");
 		keySet.add("LocationSectorName");
 		keySet.add("CountryName");
@@ -34,7 +36,7 @@ public class StringSplitExamples {
 			}
 		}
 
-		System.out.println(expression);
+		System.out.println(expression);*/
 	}
 
 	private static List<String> getFilterExpr(String expression, Set<String> keySet) {
@@ -50,5 +52,11 @@ public class StringSplitExamples {
 		}
 
 		return list;
+	}
+	
+	private static void stringSplit(String string) {
+		 String str[] = string.split("=|<>|<|>|<=|>=");
+		 
+		 System.out.println(str[0] + ":" + str[1]);
 	}
 }

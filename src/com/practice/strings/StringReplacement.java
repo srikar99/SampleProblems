@@ -5,7 +5,12 @@ import java.util.Scanner;
 public class StringReplacement {
 	
 	public static void main(String[] args) {
-		replaceCharacter();
+		//replaceCharacter();
+		String s = "'741029'";
+		if(s.contains("'")) {
+			s = s.replaceAll("'", "");	
+		}
+		System.out.println(s);
 	}
 
 	private static void replaceCharacter() {

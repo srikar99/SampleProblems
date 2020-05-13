@@ -5,6 +5,7 @@ public class HackerEarthFredo {
 	public static void main(String[] args) {
 		int[] inputArray = {1, 2, 3, 4, 5};
 		System.out.println(lowestNum(inputArray));
+		
 	}
 	
 	private static int lowestNum(int[] inputArray) {

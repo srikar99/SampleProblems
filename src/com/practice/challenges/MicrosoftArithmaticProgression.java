@@ -5,7 +5,7 @@ public class MicrosoftArithmaticProgression {
 	public static void main(String[] args) {
 		
 		int[] A = {3, 6, 9, 12};
-		lap(A);
+		System.out.println(lap(A));
 	}
 	
 	private static int lap(final int[] A) {
@@ -26,7 +26,6 @@ public class MicrosoftArithmaticProgression {
 		}
 		
 		int com  = maxRepeating(lap, lap.length, lap.length);
-		System.out.println(com);
 		return max;
 	}
 	

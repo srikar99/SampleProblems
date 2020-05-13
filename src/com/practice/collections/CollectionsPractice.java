@@ -27,8 +27,13 @@ public class CollectionsPractice {
 		// accidently result in runtime error.
 
 		// adding element of type E
-		//list.add("String");
-		//list.add("String");
+		list.add("A");
+		list.add("B");
+		list.add("C");
+		
+		System.out.println("Start time: " + System.nanoTime());
+		String[] strArr = list.toArray(new String[list.size()]);
+		System.out.println("Start time: " + System.nanoTime());
 		
 		// removing element at an index
 		//list.remove(1);
@@ -91,9 +96,6 @@ public class CollectionsPractice {
 				numList.add(itr.nextIndex(), itr.next() + 1);
 			}
 		}
-		
 		System.out.println(numList);
 	}
-
-
 }
